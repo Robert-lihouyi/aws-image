@@ -3,6 +3,7 @@
 import sys, getopt
 import json
 import requests
+import os
 
 def AssemblingV2RayConfigObject(inbounds_port, socks_user, socks_pass):
     return json.dumps({
@@ -60,3 +61,4 @@ if __name__ == "__main__":
     v2ray_config_file_content = AssemblingV2RayConfigObject(userData['port'], userData['user'], userData['pass'])
     with open(write_file_path, "w") as config_file:
         config_file.write(v2ray_config_file_content)
+    os.popen('/usr/bin/v2ray --config /etc/v2ray.json')
