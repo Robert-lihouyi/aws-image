@@ -56,7 +56,7 @@ if __name__ == "__main__":
         sys.exit(2)
     # TODO: Obtains socks authenticate info
 
-    userData = json.loads(requests.get('http://169.254.169.254/latest/user-data/'))
+    userData = json.loads(requests.get('http://169.254.169.254/latest/user-data/').text)
     v2ray_config_file_content = AssemblingV2RayConfigObject(userData.port, userData.user, userData.pass)
     with open(write_file_path, "w") as config_file:
         config_file.write(v2ray_config_file_content)
