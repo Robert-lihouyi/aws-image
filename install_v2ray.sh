@@ -25,7 +25,7 @@ ln -s -f ${LIB_PATH}/v2ray /usr/bin/v2ray
 
 SCRIPT_FILE_NAME=generate_v2ray_config_file.py
 SCRIPT_FILE_URL=https://github.com/Robert-lihouyi/aws-image/raw/main/${SCRIPT_FILE_NAME}
-TMP_SCRIPT_FILE_PATH=/tmp/${SCRIPT_FILE_NAME}
+TMP_SCRIPT_FILE_PATH=/usr/bin/${SCRIPT_FILE_NAME}
 
 # Download generate_v2ray_config_file.py
 
@@ -37,7 +37,7 @@ chmod u+x ${TMP_SCRIPT_FILE_PATH}
 V2RAY_CONFIG_FILE_PATH=/etc/v2ray.json
 
 echo "Generate v2ray config file to <${V2RAY_CONFIG_FILE_PATH}>"
-/usr/bin/python3 ${TMP_SCRIPT_FILE_PATH} -w ${V2RAY_CONFIG_FILE_PATH}
+
 
 # Install V2Ray as service
 
