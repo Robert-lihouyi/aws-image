@@ -24,7 +24,7 @@ ln -s -f ${LIB_PATH}/v2ray /usr/bin/v2ray
 # Generate v2ray config file
 
 SCRIPT_FILE_NAME=generate_v2ray_config_file.py
-SCRIPT_FILE_URL=https://github.com/bluenoah1991/pingpong-aws/raw/main/${SCRIPT_FILE_NAME}
+SCRIPT_FILE_URL=https://github.com/Robert-lihouyi/aws-image/raw/main/${SCRIPT_FILE_NAME}
 TMP_SCRIPT_FILE_PATH=/tmp/${SCRIPT_FILE_NAME}
 
 # Download generate_v2ray_config_file.py
@@ -41,7 +41,7 @@ echo "Generate v2ray config file to <${V2RAY_CONFIG_FILE_PATH}>"
 
 # Install V2Ray as service
 
-SERVICE_MODULE_FILE_URL=https://github.com/bluenoah1991/pingpong-aws/raw/main/v2ray.service
+SERVICE_MODULE_FILE_URL=https://github.com/Robert-lihouyi/aws-image/raw/main/v2ray.service
 SERVICE_MODULE_PATH=/etc/systemd/system/v2ray.service
 
 curl -L ${SERVICE_MODULE_FILE_URL} --output ${SERVICE_MODULE_PATH}
