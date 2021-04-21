@@ -1,0 +1,41 @@
+name: V2Ray
+description: Install V2Ray to Ubuntu 20.04.
+schemaVersion: 1.0
+
+phases:
+  - name: build
+    steps:
+      - name: DownloadInstallScriptsStep
+        action: WebDownload
+        maxAttempts: 3
+        inputs:
+          - source: https://github.com/bluenoah1991/pingpong-aws/raw/main/install_v2ray.sh
+            destination: /tmp/install_v2ray.sh
+
+      - name: SetScriptPermissionsStep
+        action: SetFilePermissions
+        inputs:
+          - path: /tmp/install_v2ray.sh
+            permissions: 777
+
+      - name: InstallStep
+        action: ExecuteBash
+        inputs:
+          commands:
+            - /tmp/install_v2ray.sh
+            
+  - name: validate
+    steps:
+      - name: ValidateStep
+        action: ExecuteBash
+        inputs:
+          commands:
+            - echo "Hello World! Validate."
+
+  - name: test
+    steps:
+      - name: TestStep
+        action: ExecuteBash
+        inputs:
+          commands:
+            - echo "Hello World! Test."
