@@ -3,7 +3,7 @@ After=network.service
 
 [Service]
 PIDFile=/var/run/v2ray.pid
-ExecStart=/usr/bin/v2ray --config /etc/v2ray.json
+ExecStart=/usr/bin/python3 /usr/bin/generate_v2ray_config_file.py -w /etc/v2ray.json
 
 [Install]
 WantedBy=default.target
